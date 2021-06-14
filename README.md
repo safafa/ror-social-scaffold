@@ -71,6 +71,20 @@ TBA
 
 ## Authors
 
+ 👤 **Safa Aballagh**
+
+- GitHub: [@Safafa](https://github.com/safafa)
+- Twitter: [@safa aballagh](https://twitter.com/Aballagh_S)
+- LinkedIn: [Aballagh Safa](https://www.linkedin.com/in/aballaghsafa/)
+
+👤 **Adetola Adesuyi**
+
+- GitHub: [@Arinpe](https://github.com/Arinpe)
+- Twitter: [@_detola_](https://twitter.com/search?q=%40_detola_&src=typed_query)
+- LinkedIn: [Adesuyi Adetola](https://www.linkedin.com/in/aadetola/)
+
+
+
 TBA
 
 ## 🤝 Contributing
