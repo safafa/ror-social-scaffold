@@ -2,5 +2,7 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <%= link_to 'Send friendship', user_friendships_path(user.id), method: :post, class: 'profile-link' %>
+    <%= link_to 'Accept friendship', user_friendships_path(user.id), method: :post, class: 'profile-link' %>
   </span>
 </li>
