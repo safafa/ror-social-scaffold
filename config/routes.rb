@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show] do
     post "/friendship/confirm", to: "friendships#confirm"
+    delete "friendship/reject", to: "friendships#reject" 
     resources :friendships
   end
   resources :posts, only: [:index, :create] do

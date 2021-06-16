@@ -8,4 +8,7 @@ module FriendshipsHelper
           link_to('Send friendship', user_friendships_path(user.id), method: :post, class: 'profile-link' )
         end
       end
+      def reject_invitation_btn(friend)
+        link_to('Reject',  user_friendship_reject_path(friend),method: :delete, class: 'profile-link')
+      end
 end
