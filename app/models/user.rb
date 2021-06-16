@@ -38,9 +38,15 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
+
+  def request_friend?(user)
+    friend_requests.include?(user)
+  end
+
   def reject_friend(user)
     friendship = inverse_friendships.find{|friendship| friendship.user == user}
     friendship.destroy
   end
+
 end
 

@@ -3,11 +3,12 @@ class FriendshipsController < ApplicationController
     user = User.find(params[:user_id])
     @friendship = user.friendships.build(:friend_id => current_user.id, :confirmed => false)
     if  Friendship.where(user_id: params[:user_id], friend_id:current_user.id).exists?
+      flash[:alert] = 'Invitation already sent!'
       redirect_to users_path
       return
     else
       if @friendship.save
-        redirect_to root_path
+        redirect_to users_path
       end
     end
   end
@@ -22,6 +23,7 @@ class FriendshipsController < ApplicationController
       redirect_to user_path(current_user.id)
     end
   end
+
   def reject
     friend = User.find(params[:user_id])
     if friend.reject_friend(current_user)

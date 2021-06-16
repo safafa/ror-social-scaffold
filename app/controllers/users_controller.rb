@@ -10,5 +10,6 @@ class UsersController < ApplicationController
     @posts = @user.posts.ordered_by_most_recent
     @pending_friendships = @user.pending_friends
     @friendships = @user.friends
+    @requests = @user.friend_requests
   end
 end

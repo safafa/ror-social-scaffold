@@ -4,7 +4,7 @@ module FriendshipsHelper
       end
     
       def invitation(user)
-        if !user.friend?(current_user)
+        if !user.friend?(current_user) and !current_user.request_friend?(user)
           link_to('Send friendship', user_friendships_path(user.id), method: :post, class: 'profile-link' )
         end
       end
