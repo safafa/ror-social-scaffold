@@ -5,6 +5,14 @@
     <ul class="posts">
       <%= render @posts %>
     </ul>
+    <h3> Friendships: </h3>
+    <ul>
+      <% @friendships.each do |friend|%>
+      <li>
+        <%= friend.name%>
+        </li>
+        <% end %>
+    </ul>
     <%if current_user == @user%>
     <h3> Pending Friendships: </h3>
     <ul>
@@ -12,7 +20,6 @@
       <li>
         <%= friend.name%> 
         <%= accept_invitation_btn(friend) %>
-        <%= reject_invitation_btn(friend)%>
         </li>
         <% end %>
     </ul>

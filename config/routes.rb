@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:index, :show] do 
+  resources :users, only: [:index, :show] do
+    post "/friendship/confirm", to: "friendships#confirm"
     resources :friendships
   end
   resources :posts, only: [:index, :create] do

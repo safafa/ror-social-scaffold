@@ -11,4 +11,16 @@ class FriendshipsController < ApplicationController
       end
     end
   end
+
+  def confirm
+    friend = User.find(params[:user_id])
+    if friend.confirm_friend(current_user)
+      flash[:alert] = 'Confirmed!'
+      redirect_to user_path(current_user.id)
+    else
+      flash[:alert] = 'Not confirmed.'
+      redirect_to user_path(current_user.id)
+    end
+    
+  end
 end
