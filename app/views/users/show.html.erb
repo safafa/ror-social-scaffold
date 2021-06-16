@@ -5,9 +5,17 @@
     <ul class="posts">
       <%= render @posts %>
     </ul>
+    <%if current_user == @user%>
     <h3> Pending Friendships: </h3>
     <ul>
-      <%= render @friendships%>
+      <% @pending_friendships.each do |friend|%>
+      <li>
+        <%= friend.name%> 
+        <%= accept_invitation_btn(friend) %>
+        <%= reject_invitation_btn(friend)%>
+        </li>
+        <% end %>
     </ul>
+   <% end %>
   </article>
 </section>
