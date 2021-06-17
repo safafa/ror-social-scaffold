@@ -45,7 +45,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 4.0'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
 end
 
 group :development do
