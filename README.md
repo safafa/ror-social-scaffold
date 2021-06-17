@@ -55,6 +55,22 @@ Open `http://localhost:3000/` in your browser.
     rspec spec/models/friendship_spec.rb
 ```
 
+```
+    rspec spec/models/like_spec.rb
+```
+
+```
+    rspec spec/models/comment_spec.rb
+```
+
+```
+    rspec spec/models/post_spec.rb
+```
+
+```
+    rspec spec/models/user_spec.rb
+```
+
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment

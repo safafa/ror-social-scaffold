@@ -19,18 +19,18 @@
       <% @pending_friendships.each do |friend|%>
       <li>
         <%= friend.name%> 
-        <%= accept_invitation_btn(friend) %>
-        <%= reject_invitation_btn(friend)%>
         </li>
         <% end %>
     </ul>
    <% end %>
    <%if current_user == @user%>
-    <h3> Sent Requests : </h3>
+    <h3> Friendship Requests : </h3>
     <ul>
       <% @requests.each do |friend|%>
       <li>
         <%= friend.name%>
+        <%= accept_invitation_btn(friend) %>
+        <%= reject_invitation_btn(friend)%>
         </li>
         <% end %>
     </ul>
