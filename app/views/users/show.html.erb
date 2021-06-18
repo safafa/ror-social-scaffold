@@ -10,6 +10,9 @@
       <% @friendships.each do |friend|%>
       <li>
         <%= friend.name%>
+         <%if current_user == @user%>
+        <%= link_to "Remove",user_friendship_remove_path(friend), method: :delete, class: 'profile-link'%>
+        <% end %>
         </li>
         <% end %>
     </ul>
