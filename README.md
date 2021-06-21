@@ -1,15 +1,15 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> Mini social media website where users can create accounts send friendship requests and publish posts.
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby v2.7.2
+- Ruby on Rails v6.1.3
 
 ## Live Demo
 
-TBA
+[live demo](https://arcane-dusk-91323.herokuapp.com/users/sign_in)
 
 
 ## Getting Started
@@ -77,7 +77,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+The application is deployed on heroku
 
 ## Authors
 
@@ -95,7 +95,6 @@ TBA
 
 
 
-TBA
 
 ## 🤝 Contributing
 
@@ -109,9 +108,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
 
-## 📝 License
 
-TBA
 
