@@ -1,0 +1,28 @@
+require 'rails_helper'
+RSpec.describe Comment, type: :model do
+  describe 'associations' do
+    it { should belong_to(:user).class_name('User') }
+    it { should belong_to(:post).class_name('Post') }
+  end
+end
+describe 'comment process', type: :feature do
+  before :each do
+    @user = User.create(email: 'safa@gmail.com', password: '123456', name: '123456')
+  end
+  after :each do
+    @user.destroy
+  end
+
+  it 'Add a like' do
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'safa@gmail.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
+    visit '/posts/'
+    fill_in 'Add New Post', with: 'test'
+    click_button 'Save'
+    fill_in 'Add new Comment', with: 'test'
+    click_button 'Comment'
+    expect(page).to have_text('Comment was successfully created.')
+  end
+end

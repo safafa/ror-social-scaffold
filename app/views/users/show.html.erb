@@ -1,9 +1,42 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <h2><%= "Name: #{@user.name}" %></h2>  <% if current_user != @user%> <span> <%= invitation(@user)%> </span>  <% end %>
   <article class="timeline">
-    <h3>Recent posts:</h3>
+    <h3>Recent posts: </h3>
     <ul class="posts">
       <%= render @posts %>
     </ul>
+    <h3> Friendships: </h3>
+    <ul>
+      <% @friendships.each do |friend|%>
+      <li>
+        <%= friend.name%>
+         <%if current_user == @user%>
+        <%= link_to "Remove",user_friendship_remove_path(friend), method: :delete, class: 'profile-link'%>
+        <% end %>
+        </li>
+        <% end %>
+    </ul>
+    <%if current_user == @user%>
+    <h3> Pending Friendships: </h3>
+    <ul>
+      <% @pending_friendships.each do |friend|%>
+      <li>
+        <%= friend.name%> 
+        </li>
+        <% end %>
+    </ul>
+   <% end %>
+   <%if current_user == @user%>
+    <h3> Friendship Requests : </h3>
+    <ul>
+      <% @requests.each do |friend|%>
+      <li>
+        <%= friend.name%>
+        <%= accept_invitation_btn(friend) %>
+        <%= reject_invitation_btn(friend)%>
+        </li>
+        <% end %>
+    </ul>
+   <% end %>
   </article>
 </section>
