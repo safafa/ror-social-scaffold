@@ -1,0 +1,14 @@
+<h3> Friendship Requests : </h3>
+    <%if requests != nil%>
+    <ul>
+      <% requests.each do |friend|%>
+      <li>
+        <%= friend.name%>
+        <%= accept_invitation_btn(friend) %>
+        <%= reject_invitation_btn(friend)%>
+        </li>
+        <% end %>
+    </ul>
+    <% else %>
+    <p> No requests </p>
+    <% end %>

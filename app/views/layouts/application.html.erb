@@ -35,7 +35,17 @@
       </div>
     <% end %>
     <main class="main">
+    <div class="columns">
+       <div class="column is-two-thirds is-flex is-flex-direction-column is-align-items-end">
       <%= yield %>
+      </div>
+      <div class="column is-flex is-flex-direction-column is-align-items-center ">
+      <%if user_signed_in?%>
+         <%= render "friendships/requests", requests: current_user.friend_requests %>
+         <%= render "friendships/pending", pendings: current_user.pending_friends %>
+      <% end %>
+       </div>
+       </div>
     </main>
   </body>
 </html>

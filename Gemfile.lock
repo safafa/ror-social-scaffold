@@ -68,6 +68,8 @@ GEM
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bulma-rails (0.9.1)
+      sassc (~> 2.0)
     byebug (11.1.3)
     capybara (3.35.3)
       addressable
@@ -213,6 +215,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
     spring (2.1.1)
@@ -259,6 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bulma-rails (~> 0.9.1)
   byebug
   capybara
   coffee-rails (~> 4.2)
