@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'bulma-rails', '~> 0.9.1'
+gem 'gravatar_image_tag', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
