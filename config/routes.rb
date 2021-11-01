@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :posts, only: [:index, :create]
+      resources :posts, only: [:index, :create] do
+        resources :comments, only: [:create, :index]
+      end
     end 
   end
   get 'friendships/create'
