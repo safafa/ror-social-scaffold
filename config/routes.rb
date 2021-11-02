@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-
+  devise_for :users
   namespace :api do
     namespace :v1 do
+      post :auth, to: "authentication#create"
       resources :posts, only: [:index, :create] do
         resources :comments, only: [:create, :index]
       end
@@ -9,8 +10,6 @@ Rails.application.routes.draw do
   end
   get 'friendships/create'
   root 'posts#index'
-
-  devise_for :users
 
   resources :users, only: [:index, :show] do
     post "/friendship/confirm", to: "friendships#confirm"
