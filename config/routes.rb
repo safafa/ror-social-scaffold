@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post :auth, to: "authentication#create"
+      post :register, to: "registration#create"
       resources :posts, only: [:index, :create] do
         resources :comments, only: [:create, :index]
       end
