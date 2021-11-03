@@ -25,4 +25,28 @@ describe ' API' do
       end
     end
   end
+
+  path '/api/v1/posts/{post_id}/comments' do
+    get 'Retrieves comments for a post' do
+      tags 'Comments'
+      produces 'application/json', 'application/xml'
+      parameter name: :post_id, in: :path, type: :string
+
+      response '200', 'success' do
+        schema type: :object,
+               properties: {
+                 comments: { type: :object }
+               },
+               required: ['comments']
+
+        let(:post_id) { Post.find(post_id).comments }
+        run_test!
+      end
+
+      response '404', 'Not found' do
+        let(:post_id) { 'invalid' }
+        run_test!
+      end
+    end
+  end
 end
